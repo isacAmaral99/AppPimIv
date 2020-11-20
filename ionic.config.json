@@ -1,0 +1,7 @@
+{
+  "name": "AppPimLog",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
