@@ -5,13 +5,17 @@
 </ion-header>
 
 <ion-content>
-    <ion-item class="FormAuth1">
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item class="FormAuth2">
-        <ion-label position="floating">Senha</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-button fill="outline" class="BtnEntrar">Entrar</ion-button>
+    <form [formGroup]="loginForm" #ngForm="ngForm" (submit)="Entrar()">
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input formControlName="userName" name="email" type="text" placeholder="Usuario" ngModel required></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input formControlName="password" name="password" type="password" id="password" placeholder="Password" ngModel required></ion-input>
+        </ion-item>
+        <ion-button [disabled]="loginForm.invalid" fill="outline" type="submit" class="BtnEntrar">Entrar</ion-button>
+    </form>
+
+
 </ion-content>
