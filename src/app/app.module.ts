@@ -5,7 +5,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { HttpClient, HttpClientModule, HttpHeaders } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentModule } from './component/component.module';
@@ -18,7 +18,7 @@ import { HeaderComponent } from './component/header/header.component';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    ComponentModule
+    ComponentModule,HttpClientModule
   ],
   providers: [
     StatusBar,
