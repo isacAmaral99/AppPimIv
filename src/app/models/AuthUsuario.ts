@@ -9,6 +9,7 @@ export class Model {
 export class AuthUsuario  extends Model{
     public Login : string ;
     clientesCodCliente : number;
+    TipoPerfil:number;
     Senha: string;
     codPerfil : number;
     codUsuario: number;
