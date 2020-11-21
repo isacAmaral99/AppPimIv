@@ -7,7 +7,8 @@ export class Model {
 }
 
 export class Endereco  extends Model{
-  
+
+  codEndereco: number;
   Logradouro: string;
   Bairro:string;
   Complemento:string;
