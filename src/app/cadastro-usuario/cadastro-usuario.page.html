@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>CadastroUsuario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form [formGroup]="loginForm" #ngForm="ngForm" (submit)="Cadastrar()">
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">CodPerfil</ion-label>
+            <ion-input formControlName="_UserCodPerfil"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">CodCliente</ion-label>
+            <ion-input formControlName="_CodCliente"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">UserAtivo</ion-label>
+            <ion-input formControlName="_UserAtivo"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Login</ion-label>
+            <ion-input formControlName="_UserLogin"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input formControlName="_UserSenha"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Cnh</ion-label>
+            <ion-input formControlName="_UserCnh"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Rg</ion-label>
+            <ion-input formControlName="_UserRg"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Cpf</ion-label>
+            <ion-input formControlName="_UserCpf"></ion-input>
+        </ion-item>
+
+        <ion-button [disabled]="loginForm.invalid" type="submit">Entrar</ion-button>
+    </form>
+
+
+
+</ion-content>

@@ -8,6 +8,8 @@ import { Usuario } from '../models/Usuarios';
 
 const urlApiE = 'https://localhost:5001/api/endereco';
 const urlApiC = 'https://localhost:5001/api/Clientes';
+const urlApiU = 'https://localhost:5001/api/Usuarios';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,12 +47,12 @@ export class CadastrosService {
       this.httpOptions
     );
   }
-  async CadastraUsuarios(_codPerfil: string, _codCliente: string, _userAtivo:string,_empresa : string,_login:string,_senha:string,_cnh:string,_rg:string,_Cpf:string) {
+  async CadastraUsuarios(_codPerfil: string, _codCliente: string, _userAtivo:string, _login:string, _senha:string, _cnh:string, _rg:string, _Cpf:string) {
     console.log(this.httpOptions);
     
     return this.http.post<Usuario[]>(
-      urlApiC,
-      { codPerfil: _codPerfil, codCliente: _codCliente, userAtivo:_userAtivo, empresa:_empresa, login:_login, senha:_senha,_cnh:_cnh,rg:_rg,cpf:_Cpf, observe: "response" },
+      urlApiU,
+      { codPerfil: _codPerfil, codCliente: _codCliente, userAtivo:_userAtivo, login:_login, senha:_senha, cnh:_cnh, rg:_rg, cpf:_Cpf, observe: "response" },
       this.httpOptions
     );
   }
