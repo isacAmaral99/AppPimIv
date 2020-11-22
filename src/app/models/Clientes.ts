@@ -18,7 +18,4 @@ export class Cliente  extends Model{
   codEnderecoNavigation:number;
   usuarios: [];
 
-
-
-
 }

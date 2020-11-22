@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<ion-content>
+
+    <form [formGroup]="loginForm" #ngForm="ngForm" (submit)="Cadastrar()">
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">Razao Social</ion-label>
+            <ion-input formControlName="_CliNome"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Telefone</ion-label>
+            <ion-input formControlName="_telCli"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">Cnpj</ion-label>
+            <ion-input formControlName="_CnpjCli"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Nome Fantasia</ion-label>
+            <ion-input formControlName="_CliNomeFantasia"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="_CliEmail"></ion-input>
+        </ion-item>
+        <b>
+      endereco
+    </b>
+
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Logradouro</ion-label>
+            <ion-input formControlName="_Logradouro"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Bairro</ion-label>
+            <ion-input formControlName="_Bairro"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input formControlName="_Complemento"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Numero</ion-label>
+            <ion-input formControlName="_Numero"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input formControlName="_Cidade"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input formControlName="_Estado"></ion-input>
+        </ion-item>
+        <ion-button [disabled]="loginForm.invalid" type="submit">Entrar</ion-button>
+    </form>
+
+
+
+</ion-content>
