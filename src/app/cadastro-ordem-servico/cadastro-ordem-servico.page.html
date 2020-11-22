@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<ion-content>
+    <form [formGroup]="loginForm" #ngForm="ngForm" (submit)="Cadastrar()">
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">Codigo Cliente</ion-label>
+            <ion-input formControlName="_CodCliente"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Codigo do Usuario</ion-label>
+            <ion-input formControlName="_CodUsuario"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">Codigo do Carro</ion-label>
+            <ion-input formControlName="_CodCarro"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Descricao</ion-label>
+            <ion-input formControlName="_Descricao"></ion-input>
+        </ion-item>
+
+
+        <ion-button [disabled]="loginForm.invalid" type="submit">Entrar</ion-button>
+    </form>
+
+</ion-content>

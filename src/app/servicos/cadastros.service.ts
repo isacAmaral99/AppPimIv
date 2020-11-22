@@ -5,12 +5,15 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Cliente } from '../models/Clientes';
 import { Usuario } from '../models/Usuarios';
+import { OrdemServico } from '../models/OrdemServico';
 
 
 const urlApiE = 'https://localhost:5001/api/endereco';
 const urlApiC = 'https://localhost:5001/api/Clientes';
 const urlApiU = 'https://localhost:5001/api/Usuarios';
 const urlApiCar = 'https://localhost:5001/api/Carro';
+const urlApiOrdemServico = 'https://localhost:5001/api/OrdemServico';
+
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +68,16 @@ export class CadastrosService {
     return this.http.post<Carro[]>(
       urlApiCar,
       { CodUsuario: _codUsuario, Placa:_codPlaca, Ano:_AnoCarro, Chassi:_CarroChassi, Quilometragem:_CarroKm, Descricao:_CarroDesc, observe: "response" },
+      this.httpOptions
+    );
+  }
+
+  async CadastraOrdemServico(_CodCliente: string, _CodUsuario: string, _CodCarro:string, _Descricao:string) {
+    console.log(this.httpOptions);
+    
+    return this.http.post<OrdemServico[]>(
+      urlApiOrdemServico,
+      { CodCliente: _CodCliente, CodUsuario:_CodUsuario, CodCarro:_CodCarro, Descricao:_Descricao, observe: "response" },
       this.httpOptions
     );
   }
