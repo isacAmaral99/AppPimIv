@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadastroUsuarioPageRoutingModule } from './cadastro-usuario-routing.module';
+import { ConsultaUsuarioPageRoutingModule } from './consulta-usuario-routing.module';
 
-import { CadastroUsuarioPage } from './cadastro-usuario.page';
+import { ConsultaUsuarioPage } from './consulta-usuario.page';
 import { ComponentModule } from '../component/component.module';
 import { HeaderComponent } from '../component/header/header.component';
 
@@ -15,10 +15,9 @@ import { HeaderComponent } from '../component/header/header.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroUsuarioPageRoutingModule,
-    ReactiveFormsModule,
+    ConsultaUsuarioPageRoutingModule,
     ComponentModule
   ],
-  declarations: [CadastroUsuarioPage,HeaderComponent]
+  declarations: [ConsultaUsuarioPage,HeaderComponent]
 })
-export class CadastroUsuarioPageModule {}
+export class ConsultaUsuarioPageModule {}
