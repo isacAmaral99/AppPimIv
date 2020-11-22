@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<ion-content>
+    <ion-list class="">
+        <ion-item class="Fundo nota" *ngFor="let ordens of ordem">
+            <ion-button color="transparent" fill="clear" expand="full">
+                <ion-label color="light" class="NumNf">
+                    {{ordens.descricao}}</ion-label>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
