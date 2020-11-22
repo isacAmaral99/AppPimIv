@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>ConsultaClientes</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="">
+
+        <ion-item class="Fundo nota" *ngFor="let cliente of clientes">
+            <ion-button color="transparent" fill="clear" expand="full">
+                <ion-label color="light" class="NumNf">
+                    Razao Social {{cliente.nome }}</ion-label>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
