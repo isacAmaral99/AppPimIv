@@ -62,6 +62,7 @@ export class ClientesPage implements OnInit {
     const _CnpjCli = this.loginForm.get('_CnpjCli').value;
     const _CliEmail = this.loginForm.get('_CliEmail').value;
 
+                                    
     (await this.add.CadastraClientes(_CliNome,_telCli,_CnpjCli,_CliNomeFantasia,_CliEmail,__codEndereco)).subscribe(
       data=>{
           this.ToastSucesso();
@@ -76,7 +77,7 @@ export class ClientesPage implements OnInit {
       message: 'Alguem erro foi encontrado',
       position: 'middle',
       duration: 5000,
-      color: 'danger',
+      color: 'warning',
       buttons: [
         {
           text: 'ok',
@@ -91,10 +92,11 @@ export class ClientesPage implements OnInit {
   }
   async ToastSucesso() {
     const toast = await this.toastController.create({
+      cssClass: 'toastsucesso',
       message: 'Cadastro de cliente efetuado' ,
-      position: 'middle',
+      position: 'bottom',
       duration: 5000,
-      color: 'succes',
+      color: 'red',
       buttons: [
         {
           text: 'ok',

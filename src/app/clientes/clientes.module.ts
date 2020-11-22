@@ -10,7 +10,6 @@ import { ClientesPage } from './clientes.page';
 import { ComponentModule } from '../component/component.module';
 import { HeaderComponent } from '../component/header/header.component';
 
-
 @NgModule({
   imports: [
     CommonModule,

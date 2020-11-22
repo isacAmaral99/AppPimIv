@@ -13,12 +13,12 @@ export class ConsultaClientesPage implements OnInit {
   constructor(private search: ConsultasService) { }
 
   ngOnInit() {
-    debugger
+    
     this.Carregar()
   }
 
   async Carregar(){
-    debugger
+    
     (await this.search.ConsultaClientes()).subscribe(
       data => {
         this.clientes =data
