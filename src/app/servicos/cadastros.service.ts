@@ -1,3 +1,4 @@
+import { Carro } from './../models/Carro';
 import { Endereco } from './../models/Endereco';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
@@ -9,6 +10,7 @@ import { Usuario } from '../models/Usuarios';
 const urlApiE = 'https://localhost:5001/api/endereco';
 const urlApiC = 'https://localhost:5001/api/Clientes';
 const urlApiU = 'https://localhost:5001/api/Usuarios';
+const urlApiCar = 'https://localhost:5001/api/Carro';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +55,16 @@ export class CadastrosService {
     return this.http.post<Usuario[]>(
       urlApiU,
       { codPerfil: _codPerfil, codCliente: _codCliente, userAtivo:_userAtivo, login:_login, senha:_senha, cnh:_cnh, rg:_rg, cpf:_Cpf, observe: "response" },
+      this.httpOptions
+    );
+  }
+
+  async CadastraCarros(_codUsuario: string, _codPlaca: string, _AnoCarro:string, _CarroChassi:string, _CarroKm:number, _CarroDesc:string) {
+    console.log(this.httpOptions);
+    
+    return this.http.post<Carro[]>(
+      urlApiCar,
+      { CodUsuario: _codUsuario, Placa:_codPlaca, Ano:_AnoCarro, Chassi:_CarroChassi, Quilometragem:_CarroKm, Descricao:_CarroDesc, observe: "response" },
       this.httpOptions
     );
   }

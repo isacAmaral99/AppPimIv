@@ -30,6 +30,34 @@ const routes: Routes = [
   {
     path: 'dadosviagem',
     loadChildren: () => import('./dadosviagem/dadosviagem.module').then( m => m.DadosviagemPageModule)
+  },
+  {
+    path: 'clientes',
+    loadChildren: () => import('./clientes/clientes.module').then( m => m.ClientesPageModule)
+  },
+  {
+    path: 'consulta-clientes',
+    loadChildren: () => import('./consulta-clientes/consulta-clientes.module').then( m => m.ConsultaClientesPageModule)
+  },
+  {
+    path: 'cadastro-carro',
+    loadChildren: () => import('./cadastro-carro/cadastro-carro.module').then( m => m.CadastroCarroPageModule)
+  },
+  {
+    path: 'cadastro-usuario',
+    loadChildren: () => import('./cadastro-usuario/cadastro-usuario.module').then( m => m.CadastroUsuarioPageModule)
+  },
+  {
+    path: 'consulta-usuario',
+    loadChildren: () => import('./consulta-usuario/consulta-usuario.module').then( m => m.ConsultaUsuarioPageModule)
+  },
+  {
+    path: 'consulta-carro',
+    loadChildren: () => import('./consulta-carro/consulta-carro.module').then( m => m.ConsultaCarroPageModule)
+  },
+  {
+    path: 'cadastro-ordem-servico',
+    loadChildren: () => import('./cadastro-ordem-servico/cadastro-ordem-servico.module').then( m => m.CadastroOrdemServicoPageModule)
   }
 ];
 
