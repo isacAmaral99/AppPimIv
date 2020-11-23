@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<ion-content>
+
+    <ion-list class="">
+
+        <ion-item class="Fundo nota" *ngFor="let viagem of viagens">
+            <ion-button color="transparent" fill="clear" expand="full">
+                <ion-label color="white
+            " class="NumNf">
+                    Codigo viagem : {{viagem.codViagem}}
+                </ion-label>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

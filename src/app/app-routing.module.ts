@@ -58,6 +58,18 @@ const routes: Routes = [
   {
     path: 'cadastro-ordem-servico',
     loadChildren: () => import('./cadastro-ordem-servico/cadastro-ordem-servico.module').then( m => m.CadastroOrdemServicoPageModule)
+  },
+  {
+    path: 'consulta-ordem-servico',
+    loadChildren: () => import('./consulta-ordem-servico/consulta-ordem-servico.module').then( m => m.ConsultaOrdemServicoPageModule)
+  },
+  {
+    path: 'consulta-viagem',
+    loadChildren: () => import('./consulta-viagem/consulta-viagem.module').then( m => m.ConsultaViagemPageModule)
+  },
+  {
+    path: 'cadastrar-viagem',
+    loadChildren: () => import('./cadastrar-viagem/cadastrar-viagem.module').then( m => m.CadastrarViagemPageModule)
   }
 ];
 

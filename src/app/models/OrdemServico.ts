@@ -8,10 +8,10 @@ export class Model {
 
 export class OrdemServico  extends Model{
   
-  CodCliente: number;
-  CodUsuario: number;
-  CodCarro: number;
-  Descricao: string;
+  codCliente: number;
+  codUsuario: number;
+  codCarro: number;
+  descricao: string;
   
 
 }

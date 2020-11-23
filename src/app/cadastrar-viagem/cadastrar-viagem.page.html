@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<ion-content>
+    <form [formGroup]="loginForm" #ngForm="ngForm" (submit)="Cadastrar()">
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">CodUsuario</ion-label>
+            <ion-input formControlName="_ViagemCodUsuario"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">CodCarro</ion-label>
+            <ion-input formControlName="_CodCarro"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">CodEndereco</ion-label>
+            <ion-input formControlName="_CodEndereco"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">HoraSaida</ion-label>
+            <ion-input formControlName="_HoraSaida"></ion-input>
+        </ion-item>
+
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">HoraEntrada</ion-label>
+            <ion-input formControlName="_HoraEntrada"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Descricao</ion-label>
+            <ion-input formControlName="_Descricao"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">CarroKmInicial</ion-label>
+            <ion-input formControlName="_CarroKmInicial"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">CarroKmFinal</ion-label>
+            <ion-input formControlName="_CarroKmFinal"></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">CarroKmTotalViagem</ion-label>
+            <ion-input formControlName="_CarroKmTotalViagem"></ion-input>
+        </ion-item>
+
+
+        <ion-button [disabled]="loginForm.invalid" type="submit">Entrar</ion-button>
+    </form>
+</ion-content>

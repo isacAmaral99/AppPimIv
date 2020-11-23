@@ -6,13 +6,16 @@ import { Injectable } from '@angular/core';
 import { Cliente } from '../models/Clientes';
 import { Usuario } from '../models/Usuarios';
 import { OrdemServico } from '../models/OrdemServico';
+import { Viagem } from '../models/Viagem';
 
 
 const urlApiE = 'https://localhost:5001/api/endereco';
 const urlApiC = 'https://localhost:5001/api/Clientes';
 const urlApiU = 'https://localhost:5001/api/Usuarios';
 const urlApiCar = 'https://localhost:5001/api/Carro';
+
 const urlApiOrdemServico = 'https://localhost:5001/api/OrdemServico';
+const urlApiViagem = 'https://localhost:5001/api/Viagem';
 
 
 @Injectable({
@@ -78,6 +81,24 @@ export class CadastrosService {
     return this.http.post<OrdemServico[]>(
       urlApiOrdemServico,
       { CodCliente: _CodCliente, CodUsuario:_CodUsuario, CodCarro:_CodCarro, Descricao:_Descricao, observe: "response" },
+      this.httpOptions
+    );
+  }
+  async CadastraViagem(_CodUsuario: number, _CodCarro: number, _CodEndereco:number,_HoraSaida:string,_HoraEntrada:string, _Descricao:string,_CarroKmInicial:number,CarroKmFinal:number,_CarroKmTotalViagem:number) {
+    console.log(urlApiViagem,_CodUsuario,_CodCarro,_CodEndereco,_HoraSaida,_HoraEntrada,_Descricao,_CarroKmInicial,CarroKmFinal, _CarroKmTotalViagem,this.httpOptions);
+    
+    return this.http.post<Viagem[]>(
+      urlApiViagem,
+      {  CodUsuario: _CodUsuario ,
+        CodCarro:_CodCarro ,
+        CodEndereco:_CodEndereco ,
+        HoraSaida:_HoraSaida ,
+        HoraEntrada :_HoraEntrada ,
+        Descricao:_Descricao ,
+        CarroKmInicial:_CarroKmInicial ,
+        CarroKmFinal:CarroKmFinal ,
+        CarroKmTotalViagem:_CarroKmTotalViagem ,
+         observe: "response" },
       this.httpOptions
     );
   }
