@@ -1,3 +1,4 @@
+import { Entrada } from './../models/Entrada';
 
 import { OrdemServico } from './../models/OrdemServico';
 import { Carro } from './../models/Carro';
@@ -8,6 +9,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Cliente } from '../models/Clientes';
 import { Viagem } from '../models/Viagem';
+import { Saida } from '../models/Saida';
 
 
 
@@ -23,6 +25,8 @@ export class ConsultasService {
   urlApiCar = 'https://localhost:5001/api/Carro';
   urlApiOrdemServico = 'https://localhost:5001/api/OrdemServico';
   urlApiViagem = 'https://localhost:5001/api/Viagem';
+  urlApiSaida = 'https://localhost:5001/api/Saida';
+  urlApiEntrada = 'https://localhost:5001/api/Entrada'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -72,6 +76,20 @@ export class ConsultasService {
     
     return this.http.get<Viagem[]>(
       `${this.urlApiViagem }`,this.httpOptions
+    );
+  }
+  async ConsultaSaida(){
+    console.log(this.httpOptions);
+    
+    return this.http.get<Saida[]>(
+      `${this.urlApiSaida }`,this.httpOptions
+    );
+  }
+  async ConsultaEntrada(){
+    console.log(this.httpOptions);
+    
+    return this.http.get<Entrada[]>(
+      `${this.urlApiEntrada }`,this.httpOptions
     );
   }
 }

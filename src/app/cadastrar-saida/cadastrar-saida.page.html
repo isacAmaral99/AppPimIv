@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<ion-content>
+    <form [formGroup]="loginForm" #ngForm="ngForm" (submit)="Cadastrar()">
+        <ion-item class="FormAuth1">
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input formControlName="_CodUsuario" type="text" ngModel required></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Cod Viagem</ion-label>
+            <ion-input formControlName="_CodViagem" type="text" ngModel required></ion-input>
+        </ion-item>
+        <ion-item class="FormAuth2">
+            <ion-label position="floating">Cod Carro</ion-label>
+            <ion-input formControlName="_CodCarro" type="text" ngModel required></ion-input>
+        </ion-item>
+        <ion-label position="floating">Hora Saida</ion-label>
+        <ion-datetime color="light" displayFormat="DD/MM/YYYY" min="1994-03-14" max="2100-12-09" formControlName="_HoraEntrada">
+        </ion-datetime>
+
+        <ion-button [disabled]="loginForm.invalid" fill="outline" type="submit" class="BtnEntrar">Entrar</ion-button>
+    </form>
+
+</ion-content>

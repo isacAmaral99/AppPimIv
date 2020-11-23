@@ -1,3 +1,5 @@
+import { Entrada } from './../models/Entrada';
+import { Saida } from './../models/Saida';
 import { Carro } from './../models/Carro';
 import { Endereco } from './../models/Endereco';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -13,7 +15,8 @@ const urlApiE = 'https://localhost:5001/api/endereco';
 const urlApiC = 'https://localhost:5001/api/Clientes';
 const urlApiU = 'https://localhost:5001/api/Usuarios';
 const urlApiCar = 'https://localhost:5001/api/Carro';
-
+const urlApiSaida = 'https://localhost:5001/api/Saida';
+const urlApiEntrada = 'https://localhost:5001/api/Entrada'
 const urlApiOrdemServico = 'https://localhost:5001/api/OrdemServico';
 const urlApiViagem = 'https://localhost:5001/api/Viagem';
 
@@ -99,6 +102,30 @@ export class CadastrosService {
         CarroKmFinal:CarroKmFinal ,
         CarroKmTotalViagem:_CarroKmTotalViagem ,
          observe: "response" },
+      this.httpOptions
+    );
+  }
+
+  async CadastraSaida(_CodUsuario: string, _CodViagem: string,_CodCarro:string,_HoraSaida : string) {
+    debugger
+    console.log(this.httpOptions);
+    
+    return this.http.post<Saida[]>(
+      urlApiSaida,
+      { CodUsuario: _CodUsuario, CodViagem: _CodViagem,CodCarro:_CodCarro,HoraSaida:_HoraSaida .toString()
+        .replace('/', '-')
+        .replace('/', '-'), observe: "response" },
+      this.httpOptions
+    );
+  }
+
+  async CadastraEntrada(_CodUsuario: string, _CodViagem: string,_CodCarro:string,_HoraEntrada : string) {
+    debugger
+    console.log(this.httpOptions);
+    
+    return this.http.post<Entrada[]>(
+      urlApiEntrada,
+      { CodUsuario: _CodUsuario, CodViagem: _CodViagem,CodCarro:_CodCarro,HoraEntrada:_HoraEntrada, observe: "response" },
       this.httpOptions
     );
   }

@@ -70,6 +70,22 @@ const routes: Routes = [
   {
     path: 'cadastrar-viagem',
     loadChildren: () => import('./cadastrar-viagem/cadastrar-viagem.module').then( m => m.CadastrarViagemPageModule)
+  },
+  {
+    path: 'cadastrar-saida',
+    loadChildren: () => import('./cadastrar-saida/cadastrar-saida.module').then( m => m.CadastrarSaidaPageModule)
+  },
+  {
+    path: 'consulta-saida',
+    loadChildren: () => import('./consulta-saida/consulta-saida.module').then( m => m.ConsultaSaidaPageModule)
+  },
+  {
+    path: 'consulta-entrada',
+    loadChildren: () => import('./consulta-entrada/consulta-entrada.module').then( m => m.ConsultaEntradaPageModule)
+  },
+  {
+    path: 'cadastra-entrada',
+    loadChildren: () => import('./cadastra-entrada/cadastra-entrada.module').then( m => m.CadastraEntradaPageModule)
   }
 ];
 
